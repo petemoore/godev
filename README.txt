@@ -1,21 +1,23 @@
-=======================================
 Dev setup for golang with vim + plugins
-=======================================
+========================================
 
 This is my dev environment setup, hugely simplified thanks to Docker. This is what it contains (and I use):
-- Golang
-- Vim as editor
-- [Vundle Plugin manager for vim](https://github.com/gmarik/Vundle.vim)
-- [fatih/vim-go](https://github.com/fatih/vim-go) (Golang support for vim)
-- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) (Code-completion for Vim)
-- [nsf/gocode](https://github.com/nsf/gocode) (Autocompletion daemon for Golang)
-- Few other vim plugins, all set via an included vimrc.
-- A bashrc included in Amazon EC2 containers (which I don't use, I have my own secret bashrc, not part of this public release :-))
+
+* Golang
+* Vim as editor
+* [Vundle Plugin manager for vim](https://github.com/gmarik/Vundle.vim)
+* [fatih/vim-go](https://github.com/fatih/vim-go) (Golang support for vim)
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) (Code-completion for Vim)
+* [nsf/gocode](https://github.com/nsf/gocode) (Autocompletion daemon for Golang)
+* Few other vim plugins, all set via an included vimrc.
+* A bashrc included in Amazon EC2 containers (which I don't use, I have my own secret bashrc, not part of this public release :-))
 
 Others:
-- AppEngine SDK for Golang, which I've been using for some projects.
-- Python, iPython (for tools)
-- NodeJS (for JS tools)
+
+* AppEngine SDK for Golang, which I've been using for some projects.
+* Python, iPython, pip (for tools)
+* NodeJS, Bower, grunt-cli (for JS tools)
+* Other tools deemed necessary to work in a dev environment (like cmake, curl, g++, git etc.)
 
 Personal usage
 ===============
