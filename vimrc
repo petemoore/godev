@@ -23,8 +23,8 @@ let g:molokai_original=1
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 let g:go_fmt_command = "goimports"
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set autoindent
 set ignorecase
 set smartcase
