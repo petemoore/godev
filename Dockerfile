@@ -49,6 +49,9 @@ ENV PATH /go/bin:$PATH
 ENV HOME /root
 WORKDIR /go/src
 
+#fix godef
+RUN git clone https://github.com/9fans/go /go/src/9fans.net/go
+
 # VIM
 COPY vimrc /root/.vimrc
 RUN vim +PluginInstall  +qall
