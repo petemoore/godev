@@ -19,7 +19,7 @@ call vundle#end()
 filetype plugin indent on
 "Ok. Done.
 
-let g:molokai_original=1
+"let g:molokai_original=1
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 let g:go_fmt_command = "goimports"
@@ -33,27 +33,70 @@ set ruler
 syntax on
 set backspace=indent,eol,start
 
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-h>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-m>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-"if exists ("g:did_load_filetypes")
-" filetype off
-" filetype plugin indent off
-"endif
-"set runtimepath+=/usr/local/go/misc/vim
-"filetype plugin indent on
-
-"autocmd FileType go autocmd BufWritePre <buffer> Fmt
-"highlight Pmenu ctermfg=White ctermbg=Black
-"highlight PmenuSel ctermfg=Blue
 
 " Open file at a position where it was last left.
 au BufWinLeave *.go mkview
 au BufWinEnter *.go silent loadview
+
+" Up and down for ycm
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+
+" Use tab for snippets
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" Change mapleader 
+let mapleader = ","
+au FileType go nmap <leader>b <Plug>(go-build)
+
+" vim-go syntax highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" use tagbar for go
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+                \ }
+
+nmap <F8> :TagbarToggle<CR>
+
+colorscheme molokai
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
 
