@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y \
  unzip \
  vim \
  xz-utils \
+ tmux \
+ ctags \
  && rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node && npm install -g bower grunt-cli
