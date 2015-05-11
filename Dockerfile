@@ -87,5 +87,9 @@ RUN gocode set lib-path "/installs/go_appengine/goroot/pkg/linux_amd64_appengine
 
 CMD ["/bin/bash"]
 
+COPY .bash_aliases /root/.bash_aliases
+# RUN go get github.com/petemoore/generic-worker
+# RUN go get github.com/taskcluster/taskcluster-client-go/auth
+
 # Run Docker with
 # sudo docker run -i -t -v ~/workspace/src:/go/src testing2
