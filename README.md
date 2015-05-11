@@ -26,3 +26,13 @@ I've been using this setup since Dec'14. Only recently thought of releasing this
 Notes
 ======
 Modify this Dockerfile to adjust to your usage pattern, preferences etc. If you think your contribution is of interest to general public, do send me a patch, and I'll definitely consider it.
+
+Additions by pmoore
+===================
+I recommend creating an alias on your host system, something like:
+
+```sh
+alias godev='docker run --name=godev --rm=true -v ${GOPATH}/src:/go/src -t -i pmoore/godev:latest'
+```
+
+This will mount your go source directory inside the container, so you don't need checkouts of your go projects inside the container. This way you can edit with ease from inside the container, but if you kill the container, your changes still exist locally. It also means you can still push source code changes from your host operating system, without needing keys etc in the container, or needing to use ssh agent etc.
