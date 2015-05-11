@@ -35,7 +35,7 @@ COPY bashrc /root/.bashrc
 # Golang App Engine SDK
 RUN mkdir /installs && cd /installs && /usr/bin/env python -V 2>&1 | grep 2.7 && \
  wget https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.20.zip && \
- unzip go_appengine_sdk_linux_amd64-1.9.18.zip
+ unzip go_appengine_sdk_linux_amd64-1.9.20.zip
  
 # OPTIONAL: Compile vim from scratch if need be. Vim installed via apt-get as above, already comes with python interpreter, which is required by YouCompleteMe vim plugin.
 # RUN hg clone https://vim.googlecode.com/hg/ /root/vim
