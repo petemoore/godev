@@ -90,6 +90,7 @@ CMD ["/bin/bash"]
 COPY .bash_aliases /root/.bash_aliases
 # RUN go get github.com/petemoore/generic-worker
 # RUN go get github.com/taskcluster/taskcluster-client-go/auth
+ENV TERM xterm-color
 
 # Run Docker with
 # sudo docker run -i -t -v ~/workspace/src:/go/src testing2
