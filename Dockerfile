@@ -2,13 +2,12 @@
 
 FROM ubuntu
 MAINTAINER Manish Jain <manishrjain@gmail.com>
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
  ack-grep \
  cmake \
  curl \
  g++ \
  git \
- golang \
  make \
  man-db \
  mercurial \
@@ -24,6 +23,11 @@ RUN apt-get update && apt-get install -y \
  vim \
  xz-utils \
  && rm -rf /var/lib/apt/lists/*
+
+RUN wget 'https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz' \
+ && tar -C /usr/local -xzf go1.4.2.linux-amd64.tar.gz \
+ && ln -s /usr/local/go/bin/* /usr/bin \
+ && rm go1.4.2.linux-amd64.tar.gz
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node && npm install -g bower grunt-cli
 RUN pip install ipython
